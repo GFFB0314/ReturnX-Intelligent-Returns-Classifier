@@ -1,0 +1,34 @@
+# Ignore virtual environment
+nlpX/
+
+# Ignore personal files
+matrix.md
+
+# --- Security ---
+.env
+
+# --- Python & Environment ---
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints/
+
+# --- Data ---
+# Professional standard: Code goes to GitHub, Data stays local (or S3).
+# Ignoring the data folder so other people don't download our messy CSVs.
+data/
+
+# --- IDE Settings ---
+.vscode/
+.idea/
+
+# --- Model Files (Large Binaries) ---
+*.pkl
+
+
+# --- Final Project Review ---
+FINAL_REVIEW.md

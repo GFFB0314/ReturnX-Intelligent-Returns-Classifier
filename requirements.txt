@@ -1,0 +1,29 @@
+pandas
+numpy
+sqlalchemy
+scipy
+statsmodels
+psycopg2-binary
+python-dotenv
+scikit-learn
+matplotlib
+seaborn
+jupyter
+# Unit Testing
+pytest>=7.0.0          # To run unit tests
+
+# Code Quality
+black>=23.12.0 
+pylint>=2.17.0 
+
+# --- NLP & Text Processing ---
+nltk              # Natural Language Toolkit (Stopwords, Stemming)
+regex             # Advanced string matching
+wordcloud
+
+# --- Handling Imbalance ---
+imbalanced-learn  # SMOTE (Synthetic Minority Over-sampling Technique)
+
+# --- Deployment ---
+streamlit         # The Dashboard
+joblib            # Saving models
