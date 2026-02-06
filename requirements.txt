@@ -9,6 +9,9 @@ scikit-learn
 matplotlib
 seaborn
 jupyter
+xgboost
+lightgbm
+
 # Unit Testing
 pytest>=7.0.0          # To run unit tests
 

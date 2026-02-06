@@ -3,6 +3,7 @@ nlpX/
 
 # Ignore personal files
 matrix.md
+notes.txt
 
 # --- Security ---
 .env
@@ -27,7 +28,7 @@ data/
 .idea/
 
 # --- Model Files (Large Binaries) ---
-*.pkl
+# *.pkl
 
 
 # --- Final Project Review ---
