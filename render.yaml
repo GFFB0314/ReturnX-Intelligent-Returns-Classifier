@@ -1,10 +1,10 @@
 services:
   # 1. ReturnX Dashboard (Streamlit)
   - type: web
-    name: returnx-dashboard
+    name: ReturnX-dashboard
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt && python setup_nltk.py
     startCommand: streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0
     envVars:
       - key: PYTHON_VERSION
@@ -12,10 +12,10 @@ services:
 
   # 2. ReturnX API (FastAPI)
   - type: web
-    name: returnx-api
+    name: ReturnX-api
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt && python setup_nltk.py
     startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
