@@ -1,0 +1,22 @@
+services:
+  # 1. ReturnX Dashboard (Streamlit)
+  - type: web
+    name: returnx-dashboard
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+
+  # 2. ReturnX API (FastAPI)
+  - type: web
+    name: returnx-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

@@ -29,4 +29,6 @@ imbalanced-learn  # SMOTE (Synthetic Minority Over-sampling Technique)
 
 # --- Deployment ---
 streamlit         # The Dashboard
+fastapi           # The API
+uvicorn           # ASGI Server for API
 joblib            # Saving models
