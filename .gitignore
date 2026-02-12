@@ -1,35 +1,49 @@
-# Ignore virtual environment
-nlpX/
-
-# Ignore personal files
-matrix.md
-notes.txt
-
-# --- Security ---
-.env
-
-# --- Python & Environment ---
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
 venv/
-.venv/
 env/
+ENV/
+nlpX/
 
-# --- Jupyter Notebooks ---
-.ipynb_checkpoints/
+# Model Artifacts (Large training dumps)
+src/estimators.pkl
 
-# --- Data ---
-# Professional standard: Code goes to GitHub, Data stays local (or S3).
-# Ignoring the data folder so other people don't download our messy CSVs.
-data/
+# Keep deployment artifacts (User Request)
+!src/best_model.pkl
+!src/tfidf.pkl
+!src/le.pkl
 
-# --- IDE Settings ---
+# Data
+data/raw/
+data/interim/
+data/processed/
+!data/interim/labeled_reviews.csv
+
+# IDE
 .vscode/
 .idea/
 
-# --- Model Files (Large Binaries) ---
-# *.pkl
-
-
-# --- Final Project Review ---
-FINAL_REVIEW.md
+# Private docs
+matrix.md
+notes.txt
