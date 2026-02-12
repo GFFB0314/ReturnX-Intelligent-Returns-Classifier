@@ -1,7 +1,7 @@
 services:
   # 1. ReturnX Dashboard (Streamlit)
   - type: web
-    name: ReturnX-dashboard
+    name: returnX-dashboard
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt && python setup_nltk.py
@@ -12,7 +12,7 @@ services:
 
   # 2. ReturnX API (FastAPI)
   - type: web
-    name: ReturnX-api
+    name: returnX-api
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt && python setup_nltk.py
