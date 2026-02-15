@@ -38,7 +38,7 @@ src/estimators.pkl
 data/raw/
 data/interim/
 data/processed/
-!data/interim/labeled_reviews.csv
+!data/interim/labeled_reviews.csv # Not blocked for now but not tracked by Git. Will be block later.
 
 # IDE
 .vscode/
@@ -47,3 +47,6 @@ data/processed/
 # Private docs
 matrix.md
 notes.txt
+
+# NLTK Data
+nltk_data/

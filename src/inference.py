@@ -32,7 +32,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-@st.cache_resource
+# Manual cache for internal use (especially for API)
+_artifacts_cache = None
+
 def load_model_artifacts() -> Tuple[object, LabelEncoder, TfidfVectorizer]:
     """
     Loads all necessary model artifacts for inference:
@@ -43,6 +45,10 @@ def load_model_artifacts() -> Tuple[object, LabelEncoder, TfidfVectorizer]:
     Returns:
         Tuple containing (model, label_encoder, tfidf_vectorizer)
     """
+    global _artifacts_cache
+    if _artifacts_cache is not None:
+        return _artifacts_cache
+
     logger.info("Loading model artifacts...")
     
     base_path = "src"
@@ -65,7 +71,8 @@ def load_model_artifacts() -> Tuple[object, LabelEncoder, TfidfVectorizer]:
         tfidf = joblib.load(paths["tfidf"])
         
         logger.info("All artifacts loaded successfully.")
-        return model, le, tfidf
+        _artifacts_cache = (model, le, tfidf)
+        return _artifacts_cache
         
     except Exception as e:
         logger.error(f"Failed to load artifacts: {e}")

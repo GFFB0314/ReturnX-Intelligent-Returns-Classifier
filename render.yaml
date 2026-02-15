@@ -9,6 +9,8 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: NLTK_DATA
+        value: ./nltk_data
 
   # 2. ReturnX API (FastAPI)
   - type: web
@@ -20,3 +22,5 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: NLTK_DATA
+        value: ./nltk_data
