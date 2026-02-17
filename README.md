@@ -1,8 +1,6 @@
 # ReturnX Intelligent Returns Classifier 📦
 
-🔗 **[Live Dashboard](command:python main.py dashboard)** | 📊 **[GitHub Repository](https://github.com/GFFB0314/ReturnX-Intelligent-Returns-Classifier)**
-
-> **Note:** The live dashboard is a local Streamlit application. Please ensure you have the environment set up to run it.
+🚀 **[Live Dashboard](https://returnx-dashboard.onrender.com)** | 📂 **[API Documentation](https://returnx-api.onrender.com/docs)** | 📊 **[GitHub Repository](https://github.com/GFFB0314/ReturnX-Intelligent-Returns-Classifier)**
 
 Welcome to the **ReturnX Intelligent Returns Classifier** – a production-grade machine learning system designed to automate the triaging of e-commerce product returns. This project demonstrates the end-to-end lifecycle of an NLP application, from raw text processing to financial impact analysis, solving a critical operational bottleneck.
 
@@ -76,6 +74,9 @@ This project leverages a modern Python Data Science stack.
 *   🤖 **Scikit-Learn & XGBoost:** For machine learning pipelines, gradient boosting, and cross-validation.
 *   ⚖️ **Imbalanced-Learn:** For SMOTE synthetic over-sampling to handle rare defect classes.
 *   📊 **Streamlit:** For the production dashboard interface.
+*   ⚡ **FastAPI:** For building high-performance, production-ready APIs.
+*   🖤 **Black:** For automated and consistent code formatting.
+*   🔍 **Pylint:** For static code analysis and ensuring code quality.
 *   🗄️ **SQLAlchemy:** For robust database interaction.
 *   🧪 **Pytest:** For unit testing and verifying pipeline integrity.
 
@@ -121,6 +122,10 @@ You can interact with the project via Jupyter Notebooks for exploration or CLI f
     *   `03_nlp_feature_engineering.ipynb`: Text Cleaning, TF-IDF Vectorization & Modeling.
     *   `04_modelling.ipynb`: Executive Summary.
 
+*   **Live Deployment (Render):**
+    *   **Dashboard:** [https://returnx-dashboard.onrender.com](https://returnx-dashboard.onrender.com)
+    *   **API (Swagger UI):** [https://returnx-api.onrender.com/docs](https://returnx-api.onrender.com/docs)
+
 *   **Command Line Interface (`main.py`):**
     
     To run the full training pipeline (ETL -> Train -> Save Artifacts):
@@ -128,7 +133,7 @@ You can interact with the project via Jupyter Notebooks for exploration or CLI f
     python main.py train
     ```
 
-    To launch the interactive dashboard:
+    To launch the interactive dashboard locally:
     ```bash
     python main.py dashboard
     ```
@@ -176,4 +181,4 @@ For any questions, issues, or suggestions, please feel free to contact:
 ## License ©️
 **MIT License** 📝
 
-**© 2026 ReturnX Project**. This project is licensed under the **MIT License** — feel free to use, modify, and distribute it.
+**© 2026 Fares Gbetnkom**. This project is licensed under the **MIT License** — feel free to use, modify, and distribute it.

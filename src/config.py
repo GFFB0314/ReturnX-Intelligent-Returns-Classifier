@@ -11,21 +11,17 @@ load_dotenv()
 
 
 # Database Credentials from environment variables
-user = os.getenv("DB_USER", "").strip()
-password = os.getenv("DB_PASS", "").strip()
-host = os.getenv("DB_HOST", "").strip()
-port = os.getenv("DB_PORT", "").strip()
-dbname = os.getenv("DB_NAME", "").strip()
+_db_user = os.getenv("DB_USER", "").strip()
+_db_pass = os.getenv("DB_PASS", "").strip()
+_db_host = os.getenv("DB_HOST", "").strip()
+_db_port = os.getenv("DB_PORT", "").strip()
+_db_name = os.getenv("DB_NAME", "").strip()
+
 
 def get_db_connection_string() -> str:
     """Constructs the PostgreSQL connection string from environment variables."""
-    user = os.getenv("DB_USER", "postgres").strip()
-    password = os.getenv("DB_PASS", "password").strip()
-    host = os.getenv("DB_HOST", "localhost").strip()
-    port = os.getenv("DB_PORT", "5432").strip()
-    dbname = os.getenv("DB_NAME", "returnx_db").strip()
-    
-    return f"postgresql://{user}:{password}@{host}:{port}/{dbname}"
+    return f"postgresql://{_db_user}:{_db_pass}@{_db_host}:{_db_port}/{_db_name}"
+
 
 # Constant for easy import
 DB_CONNECTION_STRING = get_db_connection_string()

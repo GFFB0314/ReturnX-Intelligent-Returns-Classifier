@@ -11,21 +11,20 @@ Usage:
 """
 
 import argparse
-import sys
 import logging
 import os
-from src import etl
-from src import model
+import sys
+
+from src import etl, model
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.StreamHandler(sys.stdout)
-    ]
+    handlers=[logging.StreamHandler(sys.stdout)],
 )
 logger = logging.getLogger(__name__)
+
 
 def run_training_pipeline():
     """
@@ -34,25 +33,28 @@ def run_training_pipeline():
     2. Train model and save best artifacts for deployment.
     """
     logger.info("Initializing Training Pipeline...")
-    
+
     # Step 1: ETL
     logger.info("[Step 1/2] Running ETL Process...")
     try:
-        df = etl.extract_data()
-        df = etl.preprocess_data(df)
-        logger.info(f"ETL Complete. Data Shape: {df.shape}")
-    except Exception as e:
-        logger.critical(f"ETL Pipeline Failed: {e}")
+        df_raw = etl.extract_data()
+        df_processed = etl.preprocess_data(df_raw)
+        logger.info("ETL Complete. Data Shape: %s", df_processed.shape)
+    except (FileNotFoundError, ValueError, RuntimeError) as e:
+        logger.critical("ETL Pipeline Failed: %s", e)
         sys.exit(1)
 
     # Step 2: Model Training
     logger.info("[Step 2/2] Training Model...")
     try:
-        model.train_model(df)
-        logger.info("Training pipeline completed successfully. Artifacts ready in 'src/'.")
-    except Exception as e:
-        logger.critical(f"Model Training Failed: {e}")
+        model.train_model(df_processed)
+        logger.info(
+            "Training pipeline completed successfully. Artifacts ready in 'src/'."
+        )
+    except (ValueError, TypeError, RuntimeError) as e:
+        logger.critical("Model Training Failed: %s", e)
         sys.exit(1)
+
 
 def run_dashboard():
     """
@@ -63,16 +65,23 @@ def run_dashboard():
         # Use os.system to run the streamlit command
         exit_code = os.system("streamlit run dashboard.py")
         if exit_code != 0:
-            logger.error("Dashboard exited with errors.")
-    except Exception as e:
-        logger.error(f"Failed to launch dashboard: {e}")
+            logger.error("Dashboard exited with errors. Exit code: %d", exit_code)
+    except (OSError, RuntimeError) as e:
+        logger.error("Failed to launch dashboard: %s", e)
+
 
 def main():
+    """
+    Main entry point for the ReturnX CLI.
+    Parses arguments and dispatches to the appropriate pipeline task.
+    """
     parser = argparse.ArgumentParser(description="ReturnX Classifier CLI")
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
 
     # Train command
-    subparsers.add_parser("train", help="Run the retraining pipeline (ETL + Model Training)")
+    subparsers.add_parser(
+        "train", help="Run the retraining pipeline (ETL + Model Training)"
+    )
 
     # Dashboard command
     subparsers.add_parser("dashboard", help="Launch the Streamlit Prediction Dashboard")
@@ -85,6 +94,7 @@ def main():
         run_dashboard()
     else:
         parser.print_help()
+
 
 if __name__ == "__main__":
     main()
