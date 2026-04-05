@@ -147,12 +147,15 @@ You can interact with the project via Jupyter Notebooks for exploration or CLI f
 
 ## Results & Impact 📊
 
-In a controlled test of **4,529 returns**:
+**Simulated cost impact on a batch of 4,529 returns** (modeled on historical data, not live deployment):
 *   **Macro F1-Score:** **0.93** (XGBoost Champion Model)
 *   **Capture Efficiency:** **94.1%** 📈
 *   **Operational Cost Reduction:** **80%** (From $9,058 to $1,807) 📉
 *   **Net Savings:** **$7,250.10** 💰
 *   **Return on Investment (ROI):** **401%** 🚀
+**Note:** These savings are modeled based on stated cost assumptions (manual review: $2/item, 
+automated: $0.10/item, misclassification penalty: $5/error). Real impact requires live 
+warehouse integration and cost validation. Real metric validated on actual data: **Macro F1-score 0.93** ✓
 
 The system successfully automates the vast majority of returns while acting as a "Safety Valve" by routing ambiguous cases to the "Other" category for human review, minimizing expensive errors.
 
