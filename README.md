@@ -148,11 +148,13 @@ You can interact with the project via Jupyter Notebooks for exploration or CLI f
 ## Results & Impact 📊
 
 **Simulated cost impact on a batch of 4,529 returns** (modeled on historical data, not live deployment):
-*   **Macro F1-Score:** **0.93** (XGBoost Champion Model)
 *   **Capture Efficiency:** **94.1%** 📈
 *   **Operational Cost Reduction:** **80%** (From $9,058 to $1,807) 📉
 *   **Net Savings:** **$7,250.10** 💰
 *   **Return on Investment (ROI):** **401%** 🚀
+
+**Real metric validated on actual data:**
+*   **Macro F1-Score:** **0.93** (XGBoost Champion Model)
 
 **Note:** These savings are modeled based on stated cost assumptions (manual review: $2/item, 
 automated: $0.10/item, misclassification penalty: $5/error). Real impact requires live 
