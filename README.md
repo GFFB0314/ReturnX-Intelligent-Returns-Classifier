@@ -158,7 +158,7 @@ You can interact with the project via Jupyter Notebooks for exploration or CLI f
 
 **Note:** These savings are modeled based on stated cost assumptions (manual review: $2/item, 
 automated: $0.10/item, misclassification penalty: $5/error). Real impact requires live 
-warehouse integration and cost validation. Real metric validated on actual data: **Macro F1-score 0.93** ✓
+warehouse integration and cost validation.
 
 The system successfully automates the vast majority of returns while acting as a "Safety Valve" by routing ambiguous cases to the "Other" category for human review, minimizing expensive errors.
 
