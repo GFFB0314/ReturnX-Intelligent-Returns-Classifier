@@ -1,6 +1,6 @@
 # ReturnX Intelligent Returns Classifier 📦
 
-🚀 **[Live Dashboard](https://returnx-dashboard.onrender.com)** | 📂 **[API Documentation](https://returnx-api.onrender.com/docs)** | 📊 **[GitHub Repository](https://github.com/GFFB0314/ReturnX-Intelligent-Returns-Classifier)**
+🚀 **[Live Dashboard](https://returnx-dashboard.onrender.com)** | 📂 **[API Documentation](https://returnx-api.onrender.com/docs)**
 
 Welcome to the **ReturnX Intelligent Returns Classifier** – a production-grade machine learning system designed to automate the triaging of e-commerce product returns. This project demonstrates the end-to-end lifecycle of an NLP application, from raw text processing to financial impact analysis, solving a critical operational bottleneck.
 
