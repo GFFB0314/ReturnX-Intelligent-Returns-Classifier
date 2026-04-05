@@ -156,11 +156,10 @@ You can interact with the project via Jupyter Notebooks for exploration or CLI f
 **Real metric validated on actual data:**
 *   **Macro F1-Score:** **0.93** (XGBoost Champion Model)
 
-**Note:** These savings are modeled based on stated cost assumptions (manual review: $2/item, 
-automated: $0.10/item, misclassification penalty: $5/error). Real impact requires live 
-warehouse integration and cost validation.
-
 The system successfully automates the vast majority of returns while acting as a "Safety Valve" by routing ambiguous cases to the "Other" category for human review, minimizing expensive errors.
+
+**Note:** These savings are modeled based on stated cost assumptions (manual review: $2/item, automated: $0.10/item, misclassification penalty: $5/error). Real impact requires live 
+warehouse integration and cost validation.
 
 ---
 
