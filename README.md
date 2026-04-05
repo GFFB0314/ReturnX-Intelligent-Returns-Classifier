@@ -153,6 +153,7 @@ You can interact with the project via Jupyter Notebooks for exploration or CLI f
 *   **Operational Cost Reduction:** **80%** (From $9,058 to $1,807) 📉
 *   **Net Savings:** **$7,250.10** 💰
 *   **Return on Investment (ROI):** **401%** 🚀
+
 **Note:** These savings are modeled based on stated cost assumptions (manual review: $2/item, 
 automated: $0.10/item, misclassification penalty: $5/error). Real impact requires live 
 warehouse integration and cost validation. Real metric validated on actual data: **Macro F1-score 0.93** ✓
