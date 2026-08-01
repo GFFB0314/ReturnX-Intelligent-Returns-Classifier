@@ -23,8 +23,8 @@ isort>=5.10.0
 flake8>=5.0.0
 
 # --- NLP & Text Processing ---
-nltk              # Natural Language Toolkit (Stopwords, Stemming)
-regex             # Advanced string matching
+nltk==3.9.1 # Natural Language Toolkit (Stopwords, Stemming)
+regex==2024.11.6 # Advanced string matching
 wordcloud
 
 # --- Handling Imbalance ---
